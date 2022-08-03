@@ -5,31 +5,42 @@ public class Calculator {
 
     public static void main(String[] args) {
         final String PLUS = "+", MINUS = "-", MULTIPLY = "*", DIVIDE = "/", MODULUS = "%";
-        double sum, num1, num2;
+        boolean check = true;
+        double sum, num1 = 0, num2 = 0;
         Scanner sc = new Scanner(System.in);
         System.out.println("Давай попробуем что-то посчитать");
         System.out.println("Введи первую цифру...");
-        while (true) {
-            try { num1 = sc.nextDouble(); break; }
-            catch (InputMismatchException ime) {
+        while (check) {
+            try {
+                num1 = sc.nextDouble();
+                check = false;
+            } catch (InputMismatchException ime) {
                 System.out.println("Хм, похоже ввели некорректный формат цифр ...");
                 System.out.println("Давай попробуем еще разок:");
-                sc.nextLine();}}
+                sc.nextLine();
+            }
+        }
         sc.nextLine();
         System.out.print(num1);
         System.out.println(" |Теперь оператор...");
         String arg = sc.nextLine();
-        while (!arg.equals(PLUS) & !arg.equals(MINUS) & !arg.equals(MULTIPLY) & !arg.equals(DIVIDE) & !arg.equals(MODULUS)) {
+        while (!arg.equals(PLUS) && !arg.equals(MINUS) && !arg.equals(MULTIPLY) && !arg.equals(DIVIDE) && !arg.equals(MODULUS)) {
             System.out.println("С таким оператором мы еще не научились работать...  \nДавай попробуем ввести другой:");
-            arg = sc.nextLine();}
+            arg = sc.nextLine();
+        }
         System.out.print(num1 + " " + arg);
         System.out.println(" |Ну а теперь вторую цифру...");
-        while (true) {
-            try { num2 = sc.nextDouble(); break; }
-            catch (InputMismatchException ime) {
+        check = true;
+        while (check) {
+            try {
+                num2 = sc.nextDouble();
+                check = false;
+            } catch (InputMismatchException ime) {
                 System.out.println("Хм, похоже ввели некорректный формат цифр ...");
                 System.out.println("Давай попробуем еще разок:");
-                sc.nextLine();}}
+                sc.nextLine();
+            }
+        }
         switch (arg) {
             case PLUS:
                 sum = num1 + num2;
