@@ -11,6 +11,5 @@ public class UniversityGroup {
         secondGroup.AddStudents();
         firstGroup.getGroupDescription();
         secondGroup.getGroupDescription();
-
     }
 }
