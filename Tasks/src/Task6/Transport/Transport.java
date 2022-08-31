@@ -3,11 +3,9 @@ package Task6.Transport;
 public abstract class Transport {
     private int maxspeed = 0;
     private int maxpassangers = 0;
-
     public String name = "???";
 
     abstract public void describe();
-
 
     public int getMaxspeed() {
         return maxspeed;
@@ -26,6 +24,7 @@ public abstract class Transport {
     }
 
     public void info() {
-        System.out.println(name + ":\nmaxspeed - " + getMaxspeed() + ":\nmaxpassangers - " + getMaxpassangers());}
+        System.out.println(name + ":\nmaxspeed - " + getMaxspeed() + ":\nmaxpassangers - " + getMaxpassangers());
+    }
 }
 
